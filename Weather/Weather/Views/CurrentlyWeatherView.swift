@@ -45,7 +45,7 @@ struct CurrentlyWeatherView: View {
         .padding()
         .foregroundStyle(.white)
         .background(
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
                 .fill(
                     LinearGradient(
                         gradient: Gradient(colors: Constants.Colors.gradient),

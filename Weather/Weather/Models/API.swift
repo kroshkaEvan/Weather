@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherApi {
-    static let key = "e286a159a583b9251688d27bebc25783"
+    static let key = Constants.Strings.keyAPI
 }
 
 extension WeatherApi {
@@ -35,7 +35,9 @@ final class NetworkManager<T: Codable> {
             
             guard error == nil else {
                 print(String(describing: error))
-                completion(.failure(.error(err: error!.localizedDescription)))
+                if let error = error?.localizedDescription {
+                    completion(.failure(.error(err: error)))
+                }
                 return
             }
             

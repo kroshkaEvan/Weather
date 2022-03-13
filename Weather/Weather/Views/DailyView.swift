@@ -54,7 +54,7 @@ struct DailyWeatherView: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 15)
         .background(
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
                 .fill(
                     LinearGradient(
                         gradient: Gradient(colors: Constants.Colors.gradient),
@@ -62,8 +62,14 @@ struct DailyWeatherView: View {
                     )
                 )
         )
-        .shadow(color: Color.white.opacity(0.1), radius: 2, x: -2, y: -2)
-        .shadow(color: Color.black.opacity(0.2), radius: 2, x: 2, y: 2)
+        .shadow(color: Color.white.opacity(0.1),
+                radius: 2,
+                x: -2,
+                y: -2)
+        .shadow(color: Color.black.opacity(0.2),
+                radius: 2,
+                x: 2,
+                y: 2)
     }
 }
 

@@ -35,13 +35,14 @@ final class WeatherViewModel: ObservableObject {
         if let coord = coord {
             urlString = WeatherApi.getCurrentWeatherURL(lat: coord.latitude, lon: coord.longitude)
         } else {
-            urlString = WeatherApi.getCurrentWeatherURL(lat: 53.9, lon: 27.5667)
+            urlString = WeatherApi.getCurrentWeatherURL(lat: 53.9, lon: 27.5667) // Minsk
         }
         getWeatherInternal(city: city, for: urlString)
     }
 
     private func getWeatherInternal(city: String, for urlString: String) {
-        NetworkManager<WeatherResponse>.fetch(for: URL(string: urlString)!) { (result) in
+        guard let url = URL(string: urlString) else {return}
+        NetworkManager<WeatherResponse>.fetch(for: url) { (result) in
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
@@ -52,8 +53,7 @@ final class WeatherViewModel: ObservableObject {
             }
         }
     }
-
-    // MARK: fields
+    
     var date: String {
         Time.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.current.dt)) )
     }
@@ -62,7 +62,7 @@ final class WeatherViewModel: ObservableObject {
         if weather.current.weather.count > 0 {
             return weather.current.weather[0].icon
         }
-        return "dayClearSky"
+        return "sun"
     }
 
     var temperature: String {
