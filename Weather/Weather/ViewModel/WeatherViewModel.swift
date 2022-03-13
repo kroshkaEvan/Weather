@@ -12,7 +12,7 @@ import CoreLocation
 final class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
     @Published var isLoading = false
-    @Published var city = "Minsk" {
+    @Published var city = Constants.Strings.city {
         didSet {
             getLocation()
         }
