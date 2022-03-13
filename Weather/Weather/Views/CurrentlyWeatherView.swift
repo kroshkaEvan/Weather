@@ -16,8 +16,6 @@ struct CurrentlyWeatherView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             HStack(spacing: 20) {
-                CustomAnimationView(name: weatherViewModel.getLottieAnimationFor(icon: weatherViewModel.weatherIcon))
-                    .frame(width: 100, height: 100)
                 VStack(alignment: .leading) {
                     Text("\(weatherViewModel.temperature)°C")
                         .font(.system(size: 42))
