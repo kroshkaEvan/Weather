@@ -49,7 +49,8 @@ struct CurrentlyWeatherView: View {
                 .fill(
                     LinearGradient(
                         gradient: Gradient(colors: Constants.Colors.gradient),
-                        startPoint: .topLeading, endPoint: .bottomTrailing
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
                     )
                 )
         )

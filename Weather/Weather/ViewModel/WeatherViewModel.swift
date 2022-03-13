@@ -101,7 +101,7 @@ final class WeatherViewModel: ObservableObject {
     }
 
     func getTempFor(_ temp: Double) -> String {
-        return String(format: "%0.1f", temp)
+        return String(format: "%1.0f", temp)
     }
 
     // MARK: icons

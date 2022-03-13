@@ -73,10 +73,10 @@
 		BC62BC0727DD820D005F493D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				BC62BC1627DD82BA005F493D /* Models */,
+				BC62BC1D27DD84E0005F493D /* ViewModel */,
 				BC62BC2527DD8726005F493D /* Views */,
 				BC62BC2227DD8667005F493D /* SupportFiles */,
-				BC62BC1D27DD84E0005F493D /* ViewModel */,
-				BC62BC1627DD82BA005F493D /* Models */,
 				BC62BC0827DD820D005F493D /* WeatherApp.swift */,
 				BC62BC0E27DD8212005F493D /* Preview Content */,
 			);
