@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DailyWeatherView: View {
     @StateObject var weatherViewModel: WeatherViewModel
-
+    
     var body: some View {
         ForEach(weatherViewModel.weather.daily) { weather in
             LazyVStack {
@@ -17,37 +17,42 @@ struct DailyWeatherView: View {
             }
         }
     }
-
+    
     private func DailyWeatherCell(weather: WeatherDaily) -> some View {
         HStack {
-            VStack {
-                Text(weatherViewModel.getDayFor(timestamp: weather.dt).uppercased())
+            HStack {
+                Text(weatherViewModel.getDayFor(weather.dt).uppercased())
                     .frame(width: 50)
-                Spacer()
-                Text(weatherViewModel.getDayNumber(timestamp: weather.dt))
-                    .font(.title)
+                Text(weatherViewModel.getDayNumber(weather.dt))
             }
             Spacer()
             weatherViewModel.getWeatherIconFor(icon: weather.weather[0].icon)
-            VStack {
-                Image(systemName: "arrow.down.circle.fill")
+                .resizable()
+                .scaledToFill()
+                .frame(width: Constants.Dimensions.defaultWidth,
+                       height: Constants.Dimensions.defaultHeight,
+                       alignment: .center)
+            Spacer()
+            HStack {
+                Image("cold")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
-                Text("\(weatherViewModel.getTempFor(temp: weather.temp.min))°C")
+                Text("\(weatherViewModel.getTempFor(weather.temp.min))°C")
             }
             Spacer()
-            VStack {
-                Image(systemName: "arrow.up.circle.fill")
+            HStack {
+                Image("warm")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
-                Text("\(weatherViewModel.getTempFor(temp: weather.temp.max))°C")
+                Text("\(weatherViewModel.getTempFor(weather.temp.max))°C")
             }
         }
-            .foregroundStyle(.white)
-            .padding(.horizontal, 40)
-            .padding(.vertical, 15)
+        .font(.system(size: Constants.Font.smallSize))
+        .foregroundStyle(.white)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 15)
     }
 }
 

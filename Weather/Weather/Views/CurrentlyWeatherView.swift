@@ -11,24 +11,34 @@ struct CurrentlyWeatherView: View {
     @StateObject var weatherViewModel: WeatherViewModel
     
     var body: some View {
-        VStack(spacing: 10) {
-            Text("Today")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            HStack(spacing: 20) {
-                VStack(alignment: .leading) {
+        VStack(spacing: Constants.Dimensions.firstSpacing) {
+            weatherViewModel.getWeatherIconFor(icon: weatherViewModel.weatherIcon)
+                .resizable()
+                .scaledToFill()
+                .frame(width: (CGFloat(3)*(Constants.Dimensions.defaultWidth)),
+                       height: (CGFloat(3)*(Constants.Dimensions.defaultHeight)),
+                       alignment: .center)
+            HStack(spacing: Constants.Dimensions.secondSpacing) {
+                VStack(alignment: .center) {
                     Text("\(weatherViewModel.temperature)°C")
-                        .font(.system(size: 42))
+                        .font(.system(size: Constants.Font.largeSize))
                     Text(weatherViewModel.conditions)
+                        .font(.system(size: Constants.Font.mediumSize))
                 }
             }
             HStack {
                 Spacer()
-                WidgetView(image: "wind", color: .green, title: "\(weatherViewModel.windSpeed) m/s")
+                WidgetView(image: Constants.Images.wind,
+                           text: "wind speed",
+                           title: "\(weatherViewModel.windSpeed) m/s")
                 Spacer()
-                WidgetView(image: "drop.fill", color: .blue, title: "\(weatherViewModel.humidity)")
+                WidgetView(image: Constants.Images.humidity,
+                           text: "humidity",
+                           title: "\(weatherViewModel.humidity)")
                 Spacer()
-                WidgetView(image: "umbrella.fill", color: .red, title: "\(weatherViewModel.rainChances)")
+                WidgetView(image: Constants.Images.umbrella,
+                           text: "rain chances",
+                           title: "\(weatherViewModel.rainChances)")
                 Spacer()
             }
         }
@@ -37,17 +47,19 @@ struct CurrentlyWeatherView: View {
     }
     
     private func WidgetView (image: String,
-                             color: Color,
+                             text: String,
                              title: String) -> some View {
         VStack {
-            Image(systemName: image)
-                .padding()
-                .font(.title)
-                .foregroundStyle(color)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+            Text(text)
+            Image(image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: Constants.Dimensions.defaultWidth,
+                       height: Constants.Dimensions.defaultHeight,
+                       alignment: .center)
             Text(title)
-                .font(.title)
         }
+        .font(.system(size: Constants.Font.smallSize))
     }
 }
 

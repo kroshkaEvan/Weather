@@ -12,7 +12,7 @@ struct WeatherApi {
 }
 
 extension WeatherApi {
-    static let baseURL = "https://api.openweathermap.org/data/2.5"
+    static let baseURL = Constants.Strings.url
 
     static func getCurrentWeatherURL(lat: Double, lon: Double) -> String {
         let excludeFields = "minutely"

@@ -18,7 +18,6 @@ struct FullWeatherView: View {
                 .padding(.horizontal)
             DailyWeatherView(weatherViewModel: weatherViewModel)
                 .padding(.horizontal)
-                .padding(.vertical, 15)
         }
     }
 }

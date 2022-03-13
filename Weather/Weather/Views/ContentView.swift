@@ -16,7 +16,7 @@ struct ContentView: View {
                 SearchCityView(weatherViewModel: weatherViewModel)
                 ScrollView(showsIndicators: false) {
                     FullWeatherView(weatherViewModel: weatherViewModel)
-                        .padding(.top, 10)
+                        .padding(.top, Constants.Dimensions.defaultPadding)
                 }
             }
         }

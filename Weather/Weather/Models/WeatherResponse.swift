@@ -26,7 +26,9 @@ struct WeatherDaily: Codable, Identifiable {
     init() {
         dt = 0
         temp = Temperature(min: 0.0, max: 0.0)
-        weather = [WeatherDetail(main: "", description: "", icon: "")]
+        weather = [WeatherDetail(main: "",
+                                 description: "",
+                                 icon: "")]
     }
 }
 
@@ -44,8 +46,10 @@ struct WeatherResponse: Codable {
     static func empty() -> WeatherResponse {
         WeatherResponse(
             current: Weather(),
-            hourly: [Weather](repeating: Weather(), count: 24),
-            daily: [WeatherDaily](repeating: WeatherDaily(), count: 8)
+            hourly: [Weather](repeating: Weather(),
+                              count: 24),
+            daily: [WeatherDaily](repeating: WeatherDaily(),
+                                  count: 8)
         )
     }
 }

@@ -8,34 +8,35 @@
 import SwiftUI
 
 struct SearchCityView: View {
-    
     @ObservedObject var weatherViewModel: WeatherViewModel
-    
     @State private var startCity = Constants.Strings.city
     
     var body: some View {
         HStack {
             TextField("", text: $startCity)
-                .padding(.leading, 20)
+                .padding(.leading, 50)
+                .font(.system(size: Constants.Font.mediumSize))
             Button {
                 weatherViewModel.city = startCity
             } label: {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
                         .fill(Color.blue)
-                    Image(systemName: "location.fill")
+                        .frame(width: 60, height: 60)
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 45, height: 45)
                 }
             }
-            .frame(width: 50, height: 50)
         }
         .foregroundColor(.white)
         .padding()
         .background(ZStack (alignment: .leading) {
-            Image(systemName: "magnifyingglass")
+            Image(systemName: "location.fill")
                 .foregroundColor(.white)
-                .padding(.leading, 10)
-            
-            RoundedRectangle(cornerRadius: 10)
+                .padding(.leading, Constants.Dimensions.defaultPadding)
+            RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
                 .fill(Color.blue.opacity(0.5))
         })
     }

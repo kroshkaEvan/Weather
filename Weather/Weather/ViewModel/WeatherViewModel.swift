@@ -11,7 +11,6 @@ import CoreLocation
 @MainActor
 final class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
-    @Published var isLoading = false
     @Published var city = Constants.Strings.city {
         didSet {
             getLocation()
@@ -67,7 +66,7 @@ final class WeatherViewModel: ObservableObject {
     }
 
     var temperature: String {
-        getTempFor(temp: weather.current.temp)
+        return getTempFor(weather.current.temp)
     }
 
     var conditions: String {
@@ -78,117 +77,75 @@ final class WeatherViewModel: ObservableObject {
     }
 
     var windSpeed: String {
-        String(format: "%0.1f", weather.current.wind_speed)
+        return String(format: "%0.1f", weather.current.wind_speed)
     }
 
     var humidity: String {
-        String(format: "%d%%", weather.current.humidity)
+        return String(format: "%d%%", weather.current.humidity)
     }
 
     var rainChances: String {
-        String(format: "%0.1f%%", weather.current.dew_point)
+        return String(format: "%0.1f%%", weather.current.dew_point)
     }
 
-    func getTimeFor(timestamp: Int) -> String {
-        Time.timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
+    func getTimeFor(_ temp: Int) -> String {
+        return Time.timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(temp)))
     }
 
-    func getDayFor(timestamp: Int) -> String {
-        Time.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
+    func getDayFor(_ temp: Int) -> String {
+        return Time.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(temp)))
     }
     
-    func getDayNumber(timestamp: Int) -> String {
-        Time.dayNumberFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
+    func getDayNumber(_ temp: Int) -> String {
+        return Time.dayNumberFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(temp)))
     }
 
-    func getTempFor(temp: Double) -> String {
-        String(format: "%0.1f", temp)
+    func getTempFor(_ temp: Double) -> String {
+        return String(format: "%0.1f", temp)
     }
 
     // MARK: icons
-    func getLottieAnimationFor(icon: String) -> String {
-        switch icon {
-            case "01d":
-                return "dayClearSky"
-            case "01n":
-                return "nightClearSky"
-            case "02d":
-                return "dayFewClouds"
-            case "02n":
-                return "nightFewClouds"
-            case "03d":
-                return "dayScatteredClouds"
-            case "03n":
-                return "nightScatteredClouds"
-            case "04d":
-                return "dayBrokenClouds"
-            case "04n":
-                return "nightBrokenClouds"
-            case "09d":
-                return "dayShowerRains"
-            case "09n":
-                return "nightShowerRains"
-            case "10d":
-                return "dayRain"
-            case "10n":
-                return "nightRain"
-            case "11d":
-                return "dayThunderstorm"
-            case "11n":
-                return "nightThunderstorm"
-            case "13d":
-                return "daySnow"
-            case "13n":
-                return "nightSnow"
-            case "50d":
-                return "dayClearSky"
-            case "50n":
-                return "dayClearSky"
-            default:
-                return "dayClearSky"
-        }
-    }
-
+    
     func getWeatherIconFor(icon: String) -> Image {
         switch icon {
             case "01d":
-                return Image(systemName: "sun.max.fill")     // Clear sky day
+                return Image("sun")
             case "01n":
-                return Image(systemName: "moon.fill")        // Clear sky night
+                return Image("moon")
             case "02d":
-                return Image(systemName: "cloud.sun.fill")
+                return Image("cloudSun")
             case "02n":
-                return Image(systemName: "cloud.moon.fill")
+                return Image("cloudMoon")
             case "03d":
-                return Image(systemName: "cloud.fill")
+                return Image("cloud")
             case "03n":
-                return Image(systemName: "cloud.fill")
+                return Image("cloudMoon")
             case "04d":
-                return Image(systemName: "cloud.fill")
+                return Image("cloudMax")
             case "04n":
-                return Image(systemName: "cloud.fill")
+                return Image("cloudMoon")
             case "09d":
-                return Image(systemName: "cloud.drizzle.fill")
+                return Image("rainy")
             case "09n":
-                return Image(systemName: "cloud.drizzle.fill")
+                return Image("rainy")
             case "10d":
-                return Image(systemName: "cloud.heavyrain.fill")
+                return Image("rainySun")
             case "10n":
-                return Image(systemName: "cloud.heavyrain.fill")
+                return Image("rainyMoon")
             case "11d":
-                return Image(systemName: "cloud.bolt.fill")
+                return Image("thunderstormSun")
             case "11n":
-                return Image(systemName: "cloud.bolt.fill")
+                return Image("thunderstormMoon")
             case "13d":
-                return Image(systemName: "cloud.snow.fill")
+                return Image("snowy")
             case "13n":
-                return Image(systemName: "cloud.snow.fill")
+                return Image("snowy-2")
             case "50d":
-                return Image(systemName: "cloud.fog.fill")
+                return Image("tornado")
             case "50n":
-                return Image(systemName: "cloud.fog.fill")
+                return Image("tornado")
             default:
-                return Image(systemName: "sun.max.fill")
+                return Image("sun")
         }
     }
 }
