@@ -14,6 +14,9 @@ class Constants {
     class Strings {
         static let city = "Minsk"
         static let url = "https://api.openweathermap.org/data/2.5"
+        static let windSpeed = "wind speed"
+        static let humidity = "humidity"
+        static let rainChances = "rain chances"
     }
 
     // MARK: - Dimensions
@@ -39,6 +42,10 @@ class Constants {
         static let humidity = "humidity"
         static let wind = "wind"
         static let umbrella = "umbrella"
+        static let cold = "cold"
+        static let warm = "warm"
+        static let magnifyingGlass = "magnifyingglass"
+        static let location = "location.fill"
     }
     
     // MARK: - Font

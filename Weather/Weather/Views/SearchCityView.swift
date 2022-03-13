@@ -23,7 +23,7 @@ struct SearchCityView: View {
                     RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
                         .fill(Color.blue)
                         .frame(width: 60, height: 60)
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: Constants.Images.magnifyingGlass)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 45, height: 45)
@@ -33,7 +33,7 @@ struct SearchCityView: View {
         .foregroundColor(.white)
         .padding()
         .background(ZStack (alignment: .leading) {
-            Image(systemName: "location.fill")
+            Image(systemName: Constants.Images.location)
                 .foregroundColor(.white)
                 .padding(.leading, Constants.Dimensions.defaultPadding)
             RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)

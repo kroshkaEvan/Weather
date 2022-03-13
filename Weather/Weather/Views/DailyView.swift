@@ -34,7 +34,7 @@ struct DailyWeatherView: View {
                        alignment: .center)
             Spacer()
             HStack {
-                Image("cold")
+                Image(Constants.Images.cold)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
@@ -42,7 +42,7 @@ struct DailyWeatherView: View {
             }
             Spacer()
             HStack {
-                Image("warm")
+                Image(Constants.Images.warm)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)

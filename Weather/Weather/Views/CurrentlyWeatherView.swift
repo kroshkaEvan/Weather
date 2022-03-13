@@ -29,15 +29,15 @@ struct CurrentlyWeatherView: View {
             HStack {
                 Spacer()
                 WidgetView(image: Constants.Images.wind,
-                           text: "wind speed",
+                           text: Constants.Strings.windSpeed,
                            title: "\(weatherViewModel.windSpeed) m/s")
                 Spacer()
                 WidgetView(image: Constants.Images.humidity,
-                           text: "humidity",
+                           text: Constants.Strings.humidity,
                            title: "\(weatherViewModel.humidity)")
                 Spacer()
                 WidgetView(image: Constants.Images.umbrella,
-                           text: "rain chances",
+                           text: Constants.Strings.rainChances,
                            title: "\(weatherViewModel.rainChances)")
                 Spacer()
             }
