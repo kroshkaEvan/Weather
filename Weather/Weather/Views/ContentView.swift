@@ -12,9 +12,12 @@ struct ContentView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ScrollView(showsIndicators: false) {
-                FullWeatherView(weatherViewModel: weatherViewModel)
-                    .padding(.top, 10)
+            VStack(spacing: 0) {
+                SearchCityView(weatherViewModel: weatherViewModel)
+                ScrollView(showsIndicators: false) {
+                    FullWeatherView(weatherViewModel: weatherViewModel)
+                        .padding(.top, 10)
+                }
             }
         }
     }

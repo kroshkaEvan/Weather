@@ -11,7 +11,6 @@ struct HourlyView: View {
     @StateObject var weatherViewModel: WeatherViewModel
     
     var body: some View {
-        // Text("Hourly Forecast")
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
                 ForEach(weatherViewModel.weather.hourly) { weather in

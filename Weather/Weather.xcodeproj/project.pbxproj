@@ -23,6 +23,7 @@
 		BC62BC6427DD8A4E005F493D /* CurrentlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */; };
 		BC62BC6627DD8C05005F493D /* FullWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6527DD8C05005F493D /* FullWeatherView.swift */; };
 		BC62BC6827DD8D26005F493D /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6727DD8D26005F493D /* HourlyView.swift */; };
+		BC62BC6A27DD8F4E005F493D /* SearchCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6927DD8F4E005F493D /* SearchCityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyWeatherView.swift; sourceTree = "<group>"; };
 		BC62BC6527DD8C05005F493D /* FullWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWeatherView.swift; sourceTree = "<group>"; };
 		BC62BC6727DD8D26005F493D /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
+		BC62BC6927DD8F4E005F493D /* SearchCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityView.swift; sourceTree = "<group>"; };
 		D801C41D3E0F932BD6CA04C9 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 		EFCCD319DD8B51B4777F54D6 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 				BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */,
 				BC62BC6527DD8C05005F493D /* FullWeatherView.swift */,
 				BC62BC0A27DD820D005F493D /* ContentView.swift */,
+				BC62BC6927DD8F4E005F493D /* SearchCityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				BC62BC0B27DD820D005F493D /* ContentView.swift in Sources */,
 				BC62BC1F27DD84FF005F493D /* WeatherViewModel.swift in Sources */,
 				BC62BC2127DD85B7005F493D /* Time.swift in Sources */,
+				BC62BC6A27DD8F4E005F493D /* SearchCityView.swift in Sources */,
 				BC62BC1827DD82D2005F493D /* Weather.swift in Sources */,
 				BC62BC0927DD820D005F493D /* WeatherApp.swift in Sources */,
 				BC62BC1A27DD82EB005F493D /* WeatherResponse.swift in Sources */,
