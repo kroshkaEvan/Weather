@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var weatherViewModel = WeatherViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack(alignment: .bottom) {
+            ScrollView(showsIndicators: false) {
+                FullWeatherView(weatherViewModel: weatherViewModel)
+                    .padding(.top, 10)
+            }
+        }
     }
 }
 

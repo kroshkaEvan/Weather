@@ -14,6 +14,8 @@ struct FullWeatherView: View {
         VStack {
             CurrentlyWeatherView(weatherViewModel: weatherViewModel)
                 .padding()
+            HourlyView(weatherViewModel: weatherViewModel)
+                .padding(.horizontal)
             DailyWeatherView(weatherViewModel: weatherViewModel)
                 .padding(.horizontal)
                 .padding(.vertical, 15)

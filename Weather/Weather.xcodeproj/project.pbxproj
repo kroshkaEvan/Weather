@@ -22,6 +22,7 @@
 		BC62BC6227DD8A15005F493D /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6127DD8A15005F493D /* DailyView.swift */; };
 		BC62BC6427DD8A4E005F493D /* CurrentlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */; };
 		BC62BC6627DD8C05005F493D /* FullWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6527DD8C05005F493D /* FullWeatherView.swift */; };
+		BC62BC6827DD8D26005F493D /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6727DD8D26005F493D /* HourlyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		BC62BC6127DD8A15005F493D /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
 		BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyWeatherView.swift; sourceTree = "<group>"; };
 		BC62BC6527DD8C05005F493D /* FullWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWeatherView.swift; sourceTree = "<group>"; };
+		BC62BC6727DD8D26005F493D /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
 		D801C41D3E0F932BD6CA04C9 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 		EFCCD319DD8B51B4777F54D6 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +120,6 @@
 				BC62BC1D27DD84E0005F493D /* ViewModel */,
 				BC62BC1627DD82BA005F493D /* Models */,
 				BC62BC0827DD820D005F493D /* WeatherApp.swift */,
-				BC62BC0A27DD820D005F493D /* ContentView.swift */,
 				BC62BC0E27DD8212005F493D /* Preview Content */,
 			);
 			path = Weather;
@@ -165,8 +166,10 @@
 			children = (
 				BC62BC2827DD8775005F493D /* Animation */,
 				BC62BC6127DD8A15005F493D /* DailyView.swift */,
+				BC62BC6727DD8D26005F493D /* HourlyView.swift */,
 				BC62BC6327DD8A4E005F493D /* CurrentlyWeatherView.swift */,
 				BC62BC6527DD8C05005F493D /* FullWeatherView.swift */,
+				BC62BC0A27DD820D005F493D /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				BC62BC1A27DD82EB005F493D /* WeatherResponse.swift in Sources */,
 				BC62BC1C27DD839D005F493D /* API.swift in Sources */,
 				BC62BC2727DD873F005F493D /* Animation.swift in Sources */,
+				BC62BC6827DD8D26005F493D /* HourlyView.swift in Sources */,
 				BC62BC6227DD8A15005F493D /* DailyView.swift in Sources */,
 				BC62BC2427DD8684005F493D /* Constants.swift in Sources */,
 				BC62BC6627DD8C05005F493D /* FullWeatherView.swift in Sources */,
