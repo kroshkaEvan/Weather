@@ -21,7 +21,7 @@ struct SearchCityView: View {
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
-                        .fill(Color.blue)
+                        .fill(Constants.Colors.darkBlueColor.opacity(0.4))
                         .frame(width: 60, height: 60)
                     Image(systemName: Constants.Images.magnifyingGlass)
                         .resizable()
@@ -34,10 +34,15 @@ struct SearchCityView: View {
         .padding()
         .background(ZStack (alignment: .leading) {
             Image(systemName: Constants.Images.location)
-                .foregroundColor(.white)
+                .foregroundColor(.blue)
                 .padding(.leading, Constants.Dimensions.defaultPadding)
             RoundedRectangle(cornerRadius: Constants.Dimensions.cornerRadius)
-                .fill(Color.blue.opacity(0.5))
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: Constants.Colors.gradientSerchMenu),
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    )
+                )
         })
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Эван Крошкин on 13.03.22.
 //
 
-import UIKit
+import SwiftUI
 
 class Constants {
 
@@ -33,7 +33,14 @@ class Constants {
     // MARK: - Colors
 
     class Colors {
-        static let appMainColor = UIColor(red: 58 / 255, green: 124 / 255, blue: 80 / 255, alpha: 1)
+        static let appUpMainColor = SwiftUI.Color(red: 180 / 255, green: 214 / 255, blue: 238 / 255)
+        static let appDownMainColor = SwiftUI.Color(red: 121 / 255, green: 231 / 255, blue: 209 / 255)
+        static let lightBlueColor = SwiftUI.Color(red: 87 / 255, green: 209 / 255, blue: 240 / 255)
+        static let meduimBlueColor = SwiftUI.Color(red: 59 / 255, green: 164 / 255, blue: 237 / 255)
+        static let darkBlueColor = SwiftUI.Color(red: 17 / 255, green: 74 / 255, blue: 170 / 255)
+        static let gradient = [lightBlueColor.opacity(0.5), darkBlueColor.opacity(0.5)]
+        static let gradientAPP = [appUpMainColor, appDownMainColor]
+        static let gradientSerchMenu = [appUpMainColor.opacity(0.5), appDownMainColor.opacity(0.5)]
     }
 
     // MARK: - Images

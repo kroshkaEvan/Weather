@@ -19,6 +19,10 @@ struct ContentView: View {
                         .padding(.top, Constants.Dimensions.defaultPadding)
                 }
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: Constants.Colors.gradientAPP),
+                    startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }
 }
