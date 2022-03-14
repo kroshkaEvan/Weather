@@ -9,8 +9,6 @@ import SwiftUI
 
 class Constants {
 
-    // MARK: - Strings
-
     class Strings {
         static let city = "Minsk"
         static let keyAPI = "e286a159a583b9251688d27bebc25783"
@@ -20,8 +18,6 @@ class Constants {
         static let rainChances = "rain chances"
     }
 
-    // MARK: - Dimensions
-
     class Dimensions {
         static let firstSpacing: CGFloat = 5
         static let secondSpacing: CGFloat = 10
@@ -30,8 +26,6 @@ class Constants {
         static let defaultWidth: CGFloat = 30
         static let defaultHeight: CGFloat = 30
     }
-
-    // MARK: - Colors
 
     class Colors {
         static let appUpMainColor = SwiftUI.Color(red: 180 / 255, green: 214 / 255, blue: 238 / 255)
@@ -44,8 +38,6 @@ class Constants {
         static let gradientSerchMenu = [appUpMainColor.opacity(0.5), appDownMainColor.opacity(0.5)]
     }
 
-    // MARK: - Images
-
     class Images {
         static let humidity = "humidity"
         static let wind = "wind"
@@ -56,8 +48,6 @@ class Constants {
         static let location = "location.fill"
     }
     
-    // MARK: - Font
-
     class Font {
         static let smallSize: CGFloat = 16
         static let mediumSize: CGFloat = 30

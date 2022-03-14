@@ -15,8 +15,8 @@ struct HourlyView: View {
             HStack(spacing: Constants.Dimensions.secondSpacing) {
                 ForEach(weatherViewModel.weather.hourly) { weather in
                     let icon = weatherViewModel.getWeatherIconFor(icon: (weather.weather.count > 0) ? weather.weather[0].icon : "sun")
-                    let hour = weatherViewModel.getTimeFor(weather.dt)
-                    let temp = weatherViewModel.getTempFor(weather.temp)
+                    let hour = weatherViewModel.getTimeFor(weather.date)
+                    let temp = weatherViewModel.getTempFor(weather.temperature)
                     
                     HourlyWeatherCell(hour: hour, image: icon, temp: temp)
                 }

@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreLocation
 
-@MainActor
 final class WeatherViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
     @Published var city = Constants.Strings.city {
@@ -42,7 +41,7 @@ final class WeatherViewModel: ObservableObject {
 
     private func getWeatherInternal(city: String, for urlString: String) {
         guard let url = URL(string: urlString) else {return}
-        NetworkManager<WeatherResponse>.fetch(for: url) { (result) in
+        NetworkManager<WeatherResponse>.fetchWeather(for: url) { (result) in
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
@@ -55,29 +54,23 @@ final class WeatherViewModel: ObservableObject {
     }
     
     var date: String {
-        Time.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.current.dt)) )
+        return Time.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.current.date)) )
     }
 
     var weatherIcon: String {
-        if weather.current.weather.count > 0 {
-            return weather.current.weather[0].icon
-        }
-        return "sun"
+        return weather.current.weather.first?.icon ?? "sun"
     }
 
     var temperature: String {
-        return getTempFor(weather.current.temp)
+        return getTempFor(weather.current.temperature)
     }
 
     var conditions: String {
-        if weather.current.weather.count > 0 {
-            return weather.current.weather[0].main
-        }
-        return ""
+        return weather.current.weather.first?.main ?? ""
     }
 
     var windSpeed: String {
-        return String(format: "%0.1f", weather.current.wind_speed)
+        return String(format: "%0.1f", weather.current.windSpeed)
     }
 
     var humidity: String {
@@ -85,7 +78,7 @@ final class WeatherViewModel: ObservableObject {
     }
 
     var rainChances: String {
-        return String(format: "%0.1f%%", weather.current.dew_point)
+        return String(format: "%0.1f%%", weather.current.dewPoint)
     }
 
     func getTimeFor(_ temp: Int) -> String {
@@ -103,8 +96,6 @@ final class WeatherViewModel: ObservableObject {
     func getTempFor(_ temp: Double) -> String {
         return String(format: "%1.0f", temp)
     }
-
-    // MARK: icons
     
     func getWeatherIconFor(icon: String) -> Image {
         switch icon {

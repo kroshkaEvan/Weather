@@ -21,9 +21,9 @@ struct DailyWeatherView: View {
     private func DailyWeatherCell(weather: WeatherDaily) -> some View {
         HStack {
             HStack {
-                Text(weatherViewModel.getDayFor(weather.dt).uppercased())
+                Text(weatherViewModel.getDayFor(weather.date).uppercased())
                     .frame(width: 50)
-                Text(weatherViewModel.getDayNumber(weather.dt))
+                Text(weatherViewModel.getDayNumber(weather.date))
             }
             Spacer()
             weatherViewModel.getWeatherIconFor(icon: weather.weather[0].icon)
@@ -38,7 +38,7 @@ struct DailyWeatherView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
-                Text("\(weatherViewModel.getTempFor(weather.temp.min))°C")
+                Text("\(weatherViewModel.getTempFor(weather.temperature.min))°C")
             }
             Spacer()
             HStack {
@@ -46,7 +46,7 @@ struct DailyWeatherView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
-                Text("\(weatherViewModel.getTempFor(weather.temp.max))°C")
+                Text("\(weatherViewModel.getTempFor(weather.temperature.max))°C")
             }
         }
         .font(.system(size: Constants.Font.smallSize))
