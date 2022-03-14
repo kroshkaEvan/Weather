@@ -32,9 +32,9 @@ final class WeatherViewModel: ObservableObject {
     private func getWeather(coord: CLLocationCoordinate2D?) {
         var urlString = ""
         if let coord = coord {
-            urlString = WeatherApi.getCurrentWeatherURL(lat: coord.latitude, lon: coord.longitude)
+            urlString = WeatherApi.getCurrentWeatherURL(latitude: coord.latitude, longitude: coord.longitude)
         } else {
-            urlString = WeatherApi.getCurrentWeatherURL(lat: 53.9, lon: 27.5667) // Minsk
+            urlString = WeatherApi.getCurrentWeatherURL(latitude: 53.9, longitude: 27.5667) // Minsk
         }
         getWeatherInternal(city: city, for: urlString)
     }

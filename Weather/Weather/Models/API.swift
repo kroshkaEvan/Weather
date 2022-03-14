@@ -14,9 +14,9 @@ struct WeatherApi {
 extension WeatherApi {
     static let baseURL = Constants.Strings.url
 
-    static func getCurrentWeatherURL(lat: Double, lon: Double) -> String {
+    static func getCurrentWeatherURL(latitude: Double, longitude: Double) -> String {
         let excludeFields = "minutely"
-        return "\(baseURL)/onecall?lat=\(lat)&lon=\(lon)&appid=\(key)&exclude=\(excludeFields)&units=metric"
+        return "\(baseURL)/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(key)&exclude=\(excludeFields)&units=metric"
     }
 }
 

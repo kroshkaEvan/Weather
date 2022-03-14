@@ -22,6 +22,8 @@
 		BC62BC6627DD8C05005F493D /* FullWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6527DD8C05005F493D /* FullWeatherView.swift */; };
 		BC62BC6827DD8D26005F493D /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6727DD8D26005F493D /* HourlyView.swift */; };
 		BC62BC6A27DD8F4E005F493D /* SearchCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BC6927DD8F4E005F493D /* SearchCityView.swift */; };
+		BC70CBEC27DF624C0003CEC4 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70CBEB27DF624C0003CEC4 /* Localization.swift */; };
+		BC70CBEF27DF659B0003CEC4 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC70CBF127DF659B0003CEC4 /* Localization.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		BC62BC6527DD8C05005F493D /* FullWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWeatherView.swift; sourceTree = "<group>"; };
 		BC62BC6727DD8D26005F493D /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
 		BC62BC6927DD8F4E005F493D /* SearchCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityView.swift; sourceTree = "<group>"; };
+		BC70CBEB27DF624C0003CEC4 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		BC70CBF027DF659B0003CEC4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			children = (
 				BC62BC0C27DD8212005F493D /* Assets.xcassets */,
 				BC62BC2327DD8684005F493D /* Constants.swift */,
+				BC70CBEB27DF624C0003CEC4 /* Localization.swift */,
+				BC70CBF127DF659B0003CEC4 /* Localization.strings */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = BC62BBFC27DD820C005F493D;
 			productRefGroup = BC62BC0627DD820D005F493D /* Products */;
@@ -191,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC62BC1027DD8212005F493D /* Preview Assets.xcassets in Resources */,
+				BC70CBEF27DF659B0003CEC4 /* Localization.strings in Resources */,
 				BC62BC0D27DD8212005F493D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +212,7 @@
 			files = (
 				BC62BC0B27DD820D005F493D /* ContentView.swift in Sources */,
 				BC62BC1F27DD84FF005F493D /* WeatherViewModel.swift in Sources */,
+				BC70CBEC27DF624C0003CEC4 /* Localization.swift in Sources */,
 				BC62BC2127DD85B7005F493D /* Time.swift in Sources */,
 				BC62BC6A27DD8F4E005F493D /* SearchCityView.swift in Sources */,
 				BC62BC1827DD82D2005F493D /* Weather.swift in Sources */,
@@ -219,6 +228,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BC70CBF127DF659B0003CEC4 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC70CBF027DF659B0003CEC4 /* ru */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BC62BC1127DD8212005F493D /* Debug */ = {

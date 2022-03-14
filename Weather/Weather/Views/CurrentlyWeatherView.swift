@@ -22,22 +22,22 @@ struct CurrentlyWeatherView: View {
                 VStack(alignment: .center) {
                     Text("\(weatherViewModel.temperature)°C")
                         .font(.system(size: Constants.Font.largeSize))
-                    Text(weatherViewModel.conditions)
+                    Text(weatherViewModel.conditions.localizated())
                         .font(.system(size: Constants.Font.mediumSize))
                 }
             }
             HStack {
                 Spacer()
                 WidgetView(image: Constants.Images.wind,
-                           text: Constants.Strings.windSpeed,
+                           text: Constants.Strings.windSpeed.localizated(),
                            title: "\(weatherViewModel.windSpeed) m/s")
                 Spacer()
                 WidgetView(image: Constants.Images.humidity,
-                           text: Constants.Strings.humidity,
+                           text: Constants.Strings.humidity.localizated(),
                            title: "\(weatherViewModel.humidity)")
                 Spacer()
                 WidgetView(image: Constants.Images.umbrella,
-                           text: Constants.Strings.rainChances,
+                           text: Constants.Strings.rainChances.localizated(),
                            title: "\(weatherViewModel.rainChances)")
                 Spacer()
             }
