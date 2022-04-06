@@ -1,8 +1,8 @@
-Приложение погоды iOS с использованием SwiftUI, MVVM и OpenWeatherMap API, локализировано на русский и английский язык. 
+Приложение погоды iOS с использованием SwiftUI, MVVM и OpenWeatherMap API (https://openweathermap.org/api/one-call-api), локализировано на русский и английский язык. 
 
 Цель данного проекта - показать работу с паттерном MVVM и SwiftUI без использования сторонних фреймворков.
 
-The iOS weather app using SwiftUI, MVVM and OpenWeatherMap API, localized into Russian and English.
+The iOS weather app using SwiftUI, MVVM architecture and OpenWeatherMap API (https://openweathermap.org/api/one-call-api), localized into Russian and English.
 
 The purpose of this project is to show working with the MVVM and SwiftUI pattern without using third-party frameworks.
 
