@@ -2,6 +2,8 @@
 
 Цель данного проекта - показать работу с паттерном MVVM и SwiftUI без использования сторонних фреймворков.
 
+https://user-images.githubusercontent.com/95620294/169780174-0961a643-6ed5-469a-abd6-6fc7690b974c.mov
+
 The iOS weather app using SwiftUI, MVVM architecture and OpenWeatherMap API (https://openweathermap.org/api/one-call-api), localized into Russian and English.
 
 The purpose of this project is to show working with the MVVM and SwiftUI pattern without using third-party frameworks.
